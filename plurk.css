@@ -1,0 +1,350 @@
+/* font */
+@font-face {
+	font-family: 'Averia Serif Libre';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Averia Serif Libre Regular'), local('AveriaSerifLibre-Regular'), url(https://fonts.gstatic.com/s/averiaseriflibre/v7/neIWzD2ms4wxr6GvjeD0X88SHPyX2xYOoguP.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'UnifrakturCook';
+	font-style: normal;
+	font-weight: 500;
+	src: local('UnifrakturCook'), local('UnifrakturCook-Bold'), url(https://fonts.gstatic.com/s/unifrakturcook/v9/IurA6Yli8YOdcoky-0PTTdkm56n05Xwy1oM.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: 'Beth Ellen';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Beth Ellen Regular'), local('BethEllen-Regular'), url(https://fonts.gstatic.com/s/bethellen/v1/WwkbxPW2BE-3rb_JNT-qIIcoVfg61Nc.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+	font-family: nixie2;
+	src: url('https://akira.eu.org/assets/AkiNixieNumber-Regular.woff2') format('woff2'),
+	url('https://akira.eu.org/assets/AkiNixieNumber-Regular.woff') format('woff');
+}
+
+/** global **/
+* {
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif'), auto;
+	font-family: 'Averia Serif Libre', sans-serif;
+}
+body {
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif'), auto;
+	color: black;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	background: black url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tarare_esquisse_de_d%C3%A9cor_%28...%29Percier_Charles_btv1b531132068.jpg/1024px-Tarare_esquisse_de_d%C3%A9cor_%28...%29Percier_Charles_btv1b531132068.jpg) center repeat;
+}
+a, a:hover, a:link, a:visited, a:active {
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif'), auto;
+	color: #003153;
+	text-decoration: none;
+	background: none;
+}
+textarea {
+	border: 1.5px double black !important;
+	border-radius: 10px 2px 10px 2px;
+	min-height: 100px;
+	background: oldlace;
+	opacity: 0.3;
+}
+textarea:hover { opacity: 0.7; }
+textarea:focus { background: white; opacity: 0.9; }
+
+/** plurk river **/
+#timeline_holder { height: 440px !important; }
+#empty_timeline_fg {
+	font: 24px 'Beth Ellen';
+	color: black;
+	text-shadow: none;
+}
+/* plurk creature */
+#dynamic_logo img {
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+#dynamic_logo {
+	height: 240px;
+	width: 185px;
+	margin-top: 30px;
+	margin-right: 30px;
+	border-radius: 50%;
+	box-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+	background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg/185px-Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg) no-repeat;
+}
+/* plurk */
+#timeline_holder .plurk_cnt {
+	font-size: 13px;
+	background: oldlace;
+	border: 1px solid black;
+	border-radius: 10px 2px 10px 2px;
+	min-height: 54px;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	opacity: 0.6;
+	transition: .3s;
+}
+#timeline_holder .link_extend .plurk_cnt { opacity: 1 !important; }
+.display, .toggled { min-width: 440px; }
+.muted { opacity: 0.3; }
+.name { color: #003153 !important; margin-right: 2px; }
+.p_img {
+	margin-top: 4px;
+	margin-right: 2px;
+}
+.p_img img {
+	border-radius: 5px 1px 5px 1px;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.response_count {
+	margin-left: 2px;
+	font: 12px 'UnifrakturCook';
+	color: black;
+	border: none;
+	border-radius: 4px 1px 4px 1px;
+	background: none;
+	opacity: 0.9;
+}
+.new .response_count {
+	color: oldlace;
+	background: darkred;
+	font-size: 12px;
+	opacity: 0.8;
+}
+/* response list */
+.plurk_box .list { min-height: 240px; background: white; }
+.response_box {  }
+.list .plurk_cnt {
+	font-size: 13px;
+	border-bottom: 1px double black;
+}
+.list .plurk_cnt .td_qual {
+	position: absolute;
+	width: auto;
+	overflow: visible;
+	margin-left: 0.7em;
+}
+.list .plurk_cnt .text_holder {
+	margin-top: 1.3em;
+	padding: 0.5em;
+	margin-left: 0.7em;
+	width: auto !important;
+	border-radius: 3px;
+}
+.list .highlight_owner .plurk_cnt { background: oldlace; }
+.list .empty {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Antonio_Salieri_signature.svg/320px-Antonio_Salieri_signature.svg.png) no-repeat 50% 0 transparent;
+	background-size: 40%;
+	text-indent: -9999px;
+}
+.plurk_box .mini_form { background: oldlace; border-top: black 1px dotted; }
+.timeago, .response-status .response-count, .char_updater { color: darkred !important; }
+
+/* toolbar */
+#timeline_control_holder a {
+	font-family: 'UnifrakturCook';
+	font-size: 12px;
+	border-radius: 10px 2px 10px 2px;
+	transition: .3s;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+#filter_tab a { text-decoration: none; }
+#filter_tab a.filter_selected {
+	color: oldlace;
+	background: black;
+}
+#filter_tab a.filter_selected:hover { color: black; background: oldlace; }
+#filter_tab a.off_tab { color: black; background: oldlace; }
+#filter_tab a.off_tab:hover { color: oldlace; background: darkred; }
+#updater .item a {
+	color: black;
+	border: 1px solid black;
+	border-radius: 10px 2px 10px 2px;
+	background: none;
+	transition: .3s;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	text-decoration: none;
+}
+#updater .item a:hover {
+	color: oldlace;
+	border: 1px solid darkred;
+	background: darkred;
+}
+.unread #alert_beacon, .unread_generic {
+	font-family: 'UnifrakturCook';
+	color: oldlace;
+	background: darkred;
+	border-radius: 4px 1px 4px 1px;
+}
+
+/** timeline **/
+.timeline-bg {
+	background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Antonio_Salieri_signature.svg/320px-Antonio_Salieri_signature.svg.png") repeat-x bottom;
+}
+#bottom_line {
+	background: black;
+	opacity: 0.9;
+}
+.bottom_start, .bottom_end {
+	color: darkred;
+	font: 11px 'UnifrakturCook';
+	background: none;
+	opacity: 0.8;
+}
+#time_show {
+	font-family: 'UnifrakturCook';
+	background: darkred;
+	border-radius: 5px 1px 5px 1px;
+	opacity: 0.9;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.cmp_arrow_right, .cmp_arrow_left, .cmp_back_to_today { display: none; }
+
+/** dashboard **/
+#plurk-dashboard a { color: #003153; }
+#plurk-dashboard .dash-segment .segment-content {
+	color: black;
+	background: none;
+	border: 2px solid rgba(0,0,0,0);
+	border-radius: 20px 1px 20px 1px;
+	transition: .3s;
+}
+#plurk-dashboard .dash-segment .segment-content:hover {
+	background: oldlace;
+	border: 2px solid black;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+/* profile */
+.dash-segment-profile .segment-content {
+}
+#plurk-dashboard img {
+	border: 1px solid black;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+#dash-profile { padding-left: 12px; }
+.display_name {
+	color: #7851A9;
+	text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+.nick_name {
+	font: 16px 'Beth Ellen';
+}
+.profile-info {
+	position: absolute;
+	right: 8%;
+	bottom: 5%;
+}
+.profile-info span { color: #66023C; font-family: 'UnifrakturCook' !important; }
+#dash-additional-info { padding-left: 14px !important; }
+#location {
+	font-family: 'Beth Ellen';
+	position: absolute;
+	right: 8%;
+	bottom: 5%;
+}
+/* plurk text area */
+.dash-group-form .segment-content:hover {
+	background: none !important;
+	border: 2px solid rgba(0,0,0,0) !important;
+	box-shadow: none !important;
+}
+.input_holder { background: none; border: none; }
+.submit_img {
+	background: black !important;
+	border-radius: 10px 2px 10px 2px;
+	color: oldlace;
+	font-family: 'UnifrakturCook';
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	transition: .3s;
+}
+.submit_img:hover {
+	background: none !important;
+	color: darkred;
+}
+.dd_img { box-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.q_freestyle { background: black; }
+/* karma and stats */
+.dash-segment-stats .segment-content {}
+.karma_hover {
+	left: 160px;
+	font-size: 32px;
+	font-family: 'Beth Ellen';
+}
+#karma {
+	position: relative;
+	display: inline-block;
+	text-align: right;
+	font-family: 'nixie2';
+	font-size: 1.2em;
+	width: 3.5em;
+	padding: 0.2em;
+	padding-bottom: 0.1em;
+}
+#karma::before {
+	position: absolute;
+	top: 0.2em;
+	left: 0.2em;
+	opacity: 0.5;
+	content: '$$$$$$';
+}
+#karma_arrow { color: darkred; }
+#dash-stats table { display: none; }
+/* friends and fans */
+.show_all_friends a, #num_of_friends { font-family: 'UnifrakturCook'; }
+#dash-friends-pics, #dash-fans-pics {
+	padding-left: 10px;
+	height: 20px;
+	overflow: hidden;
+}
+#dash-fans::before {
+	font: 14px 'Beth Ellen';
+	position: absolute;
+	bottom: 18%;
+	left: 10%;
+	content: 'Prima la musica e poi le parole.';
+}
+
+/* footer */
+#footer { display: none; }
+#resp_banner_ads, .cbox_ads { display: none; }
+
+/* scrollbar */
+::-webkit-scrollbar { background: darkgrey !important; }
+::-webkit-scrollbar-thumb { background: black !important;}
+::-webkit-scrollbar-thumb:hover { background: darkred !important; }
+::-webkit-scrollbar-thumb:active { background: darkred !important; }
+
+/* selection */
+::selection {
+	background: #003153;
+	color: oldlace;
+}
+::-moz-selection {
+	background: #003153;
+	color: oldlace;
+}
+
+/* hyde */
+#top_bar .item img,
+span#plurk_tab, span#search_tab,
+.dots .inner, #replurkers_holder, .plurk_box .caption,
+#plurks_count a, .advert a, #empty_timeline_bg,
+.block_bg .div_one_line, .small_timeline .block_bg .div_one_line,
+#top_login a#sign_up, #getting_started, div .adsense,
+#dash-stats h2, #dash-friends h2, #dash-fans h2,
+.link_arrow, .cmp_points-arrow,
+#dash-friends form, #dash-friends p, div#fan_holder span,
+div #tw_help, div a#dashboard-invite, div #sharePlurk,
+#block_user,
+.dash-icon {
+	display : none;
+	height: 0 !important;
+	width: 0 !important;
+	overflow: hidden;
+	position: fixed;
+	top: -9000px;
+	filter:alpha(opacity=0) !important; opacity:0 !important; zoom:1;
+}
