@@ -1,4 +1,4 @@
-/* --- font --- */
+/* font */
 @font-face {
 	font-family: 'UnifrakturCook';
 	font-style: normal;
@@ -20,41 +20,44 @@
 	url('https://akira.eu.org/assets/AkiNixieNumber-Regular.woff') format('woff');
 }
 
-/* --- global --- */
+/* global */
 * {
-	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif'), auto;
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/compass.gif'), auto !important;
 }
+/*https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif*/
+
 body {
 	color: black;
 	font-family: Georgia, sans-serif;
 	letter-spacing: 1px;
 	line-height: 1.6;
-	background: black url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tarare_esquisse_de_d%C3%A9cor_%28...%29Percier_Charles_btv1b531132068.jpg/1024px-Tarare_esquisse_de_d%C3%A9cor_%28...%29Percier_Charles_btv1b531132068.jpg) center repeat;
+	background: black url('https://live.staticflickr.com/65535/50265295758_5f2301f68a_k_d.jpg') center repeat;
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/compass.gif'), auto !important;
 }
+/*
+	background: black url(https://stacks.stanford.edu/image/iiif/xp468cg7846%2Fxp468cg7846_00_0001/full/1672,/0/default.jpg) center repeat;
+	background: black url(https://lh3.googleusercontent.com/-fB3s7HDSjN7tUZ7UUw1mXQJennIq-Skr5PlJAI_ppO0Ollzsf3e-rtz763PSrJvz572qN-bsNGDUiquK_oI7iW_W5xPNTP5DHi1SgdsBxBiMG_TnGDor9VzRxUr-ZenZhmZjyFJ2A=w1080) top repeat;
+*/
 
 /* link */
 a, a:hover, a:link, a:visited, a:active {
-	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/musicstand.gif'), auto;
-	color: #003153;
+	cursor: url('https://cursors3.totallyfreecursors.com/thumbnails/compass.gif'), auto;
+	color: navy;
 	background: none;
 }
 
 /* textarea */
 .textarea_holder textarea {
 	padding: 4px !important;
-	min-height: 100px;
+	min-height: 120px;
 	color: antiquewhite !important;
 	background: none !important;
-	border: 2px double black;
-	border-radius: 10px 0;
-	opacity: 0.3;
-	transition: opacity .3s ease-in-out;
+	border: 4px double black;
+	opacity: 0.7;
 }
-.textarea_holder textarea:hover {
-	opacity: 1;
-}
+.textarea_holder textarea:hover { background: black !important; }
 .textarea_holder textarea:focus {
-	background-color: black !important;
+	background: black !important;
 	opacity: 0.8;
 }
 
@@ -66,21 +69,24 @@ a, a:hover, a:link, a:visited, a:active {
 
 /* selection */
 ::selection {
-	background-color: #003153;
 	color: antiquewhite;
+	background-color: navy;
 }
 ::-moz-selection {
-	background-color: #003153;
 	color: antiquewhite;
+	background-color: navy;
 }
 
 /* --- river --- */
-#timeline_holder { }
+#timeline_holder {
+	height: 440px !important;
+}
+
 /* empty message */
-#empty_timeline_fg {
-	font: 3vw 'Beth Ellen';
+.timeline-message {
+	top: 60%;
+	font: 2vw 'Beth Ellen';
 	color: black;
-	text-shadow: none;
 }
 /* plurk creature */
 #dynamic_logo img {
@@ -94,24 +100,24 @@ a, a:hover, a:link, a:visited, a:active {
 	margin-right: 30px;
 	border-radius: 50%;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-	background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg/185px-Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg) no-repeat;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg/185px-Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg') no-repeat;
 }
 
-/* --- plurks in the river --- */
+/* plurks in the river */
 /* whole plurk container */
-.timeline-cnt .plurk_box { }
+/* .timeline-cnt .plurk_box { } */
 .timeline-cnt .plurk {
 	min-width: 320px;
-	opacity: 0.6;
+	opacity: 0.8;
 	transition: opacity .3s ease-in-out;
 }
-#timeline_holder .plurk .text_holder { min-height: auto; }
+#timeline_holder .plurk .text_holder { min-height: 36px; }
 .p_img { margin: 4px 4px 0 0;}
 .p_img img {
 	border-radius: 5px 0;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
-a.name { color: #003153 !important; }
+/* a.name { color: navy !important; } */
 .response_count {
 	margin-left: 2px;
 	font: 14px 'UnifrakturCook';
@@ -119,60 +125,74 @@ a.name { color: #003153 !important; }
 	border: none;
 	border-radius: 4px 0;
 	background: none;
-	opacity: 0.9;
 }
 .new .response_count {
 	color: antiquewhite;
 	background-color: darkred;
-	font-size: 14px;
-	opacity: 0.8;
 }
-.timeline-cnt .display { min-width: 480px; opacity: 1; }	/* hovered, expanded */
-.muted { opacity: 0.3; }
+.timeline-cnt .display {	/* hovered, expanded */
+	min-width: 450px;
+	opacity: 1;
+}
+.muted { opacity: 0.3 !important; }
+.manager a:hover {
+	color: antiquewhite !important;
+	background: darkred !important;
+}
 
 /* plurk text container */
 #timeline_holder .plurk_cnt {
 	min-height: 50px;
 	color: black;
-	font-size: 16px;
+	font-size: 14px;
 	background-color: antiquewhite;
 	border: 1px solid black;
 	border-radius: 10px 0;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-	opacity: 0.8;
+	opacity: 0.9;
 	transition: opacity .3s ease-in-out;
 }
 #timeline_holder .plurk_cnt:hover { opacity: 1; }
-#timeline_holder .plurk_cnt .link_extend { }
+/* #timeline_holder .plurk_cnt .link_extend { } */
 a.hashtag { color: darkred !important; }
-a.hashtag:hover { background-color: darkred !important; color: antiquewhite !important; }
+a.hashtag:hover {
+	background-color: darkred !important;
+	color: antiquewhite !important;
+}
 
 /* plurk response box */
 #form_holder { background: none; }
 .response_box {
-	font-size: 16px;
+	min-height: 240px;
+	font-size: 14px;
 	background-color: antiquewhite;
 	border: 1px solid black;
 	border-radius: 10px;
-	opacity: 0.8;
-	transition: opacity .3s ease-in-out;
 	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
 }
-.response_box:hover { opacity: 1; }
-.response_info { }
-.response-status { margin: 0; padding: 0; }
+/* .response_info { } */
+.response-status {
+	margin: 0;
+	padding: 0;
+}
+
 /* response list */
-.list { padding: 0; border-bottom: none; }
+.list {
+	padding: 0;
+	border-bottom: none;
+}
 .list .empty {
-	margin-top: 24px;
+	margin-top: 10px;
 	height: 100px;
-	background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Antonio_Salieri_signature.svg/320px-Antonio_Salieri_signature.svg.png) no-repeat 50% 0 transparent;
+	background: url(https://i.pinimg.com/originals/a8/ec/44/a8ec44919fe28e45ff79b6641893455f.png) no-repeat 50%;
+	background-size: 100px;
 	text-indent: -9999px;
 }
 .list .plurk  {
 	margin: 0;
 	padding: 6px 9px;
-	border-top: 1pt solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 .list .plurk_cnt {
 	min-height: 60px;
@@ -188,12 +208,33 @@ a.hashtag:hover { background-color: darkred !important; color: antiquewhite !imp
 	padding: 0.5em;
 	width: auto !important;
 }
-.list .highlight_owner {}
-.list .highlight_owner .plurk_cnt { border-left: 8px double darkred; }
-.list .highlight_owner a.name { color: #003153 !important; text-decoration: none; }
+/* .list .highlight_owner {} */
+.list .highlight_owner .plurk_cnt {
+	border-left: 8px double darkred;
+}
+.list .highlight_owner a.name {
+	color: navy !important;
+	text-decoration: none;
+}
+
+.response-manager .mention,
+.response-manager .option {
+	color: navy;
+}
+.response-manager .mention:hover,
+.response-manager .option:hover {
+	color: antiquewhite;
+	background: darkred;
+	border-radius: 3px;
+}
+
 
 /* poster holder */
-.poster_holder { opacity: 0.8; transition: opacity .3s ease-in-out; }
+.poster_holder {
+	opacity: 0.9;
+	transition: opacity .3s
+	ease-in-out;
+}
 .poster_holder:hover { opacity: 1; }
 .plurk_box .mini_form {
 	background-color: antiquewhite;
@@ -201,150 +242,198 @@ a.hashtag:hover { background-color: darkred !important; color: antiquewhite !imp
 	border-radius: 10px 0;
 }
 .mini_form .textarea_holder textarea {
-	font-size: 20px;
-	line-height: 1.2;
+	min-height: 60px;
+	font-size: 14px;
+	border: 3px double black;
 }
 .char_updater { display: none }
 
 /* response manager */
-.response-manager { background: none; border: none; border-left: 3px double black; }
+.response-manager {
+	background: none;
+	border: none;
+	border-left: 3px double black;
+}
 .response-status .response-count,
-.timeago { color: darkred; }
-.response-status:hover .response-only-owner { color: #003153; background: none; }
-.response-only-owner:hover { text-decoration: underline; }
+.timeago {
+	color: dimgrey;
+}
+.response-status:hover .response-only-owner {
+	color: navy;
+	background: none;
+}
+.response-only-owner:hover {
+	text-decoration: underline;
+}
+.load-holder .button {
+	color: black;
+	background: none;
+	border: 1px solid black;
+}
+.load-holder .button:hover {
+	color: darkred;
+	border: 1px solid darkred;
+}
 
-/* --- control buttons --- */
+/* control buttons */
+.timeline_control { 
+	margin-left: 10%;
+	margin-top: -25px;
+}
+
 #timeline_control_holder a {
 	font-family: 'UnifrakturCook';
-	font-size: 14px;
 	border-radius: 10px 0;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
-/* display different river switch */
+/* river filter switch */
 #filter_tab a {
 	text-decoration: none;
 	color: antiquewhite;
 	background-color: black;
 	transition: .3s ease-in-out;
-	opacity: 0.8;
 }
 #filter_tab a:hover {
 	background-color: darkred;
-	opacity: 1;
 }
-/*#filter_tab a.filter_selected { }*/
-/*#filter_tab a.filter_selected:hover { color: oldlace; background-color: darkred; }*/
-/*#filter_tab a.off_tab { }*/
-/*#filter_tab a.off_tab:hover { color: oldlace; background-color: darkred; }*/
+/* #filter_tab a.filter_selected { } */
+/* #filter_tab a.off_tab { } */
 
-/* display all/unread switch */
+/* all/unread switch */
 #updater .item a {
-	color: black;
-	border: 1px solid black;
-	border-radius: 10px 0;
-	background: none;
+	padding: 0 12px;
+	color: antiquewhite;
+	background-color: black;
 	transition: .3s ease-in-out;
+	border-radius: 10px 0;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 	text-decoration: none;
+	opacity: 0.8;
 }
 #updater .item a:hover {
-	color: antiquewhite;
-	border: 1px solid darkred;
 	background-color: darkred;
+	opacity: 1;
 }
 .unread #alert_beacon, .unread_generic {
 	font-family: 'UnifrakturCook';
 	color: antiquewhite;
 	background-color: darkred;
-	border-radius: 4px 0;
+	border-radius: 5px 0;
 }
 
-/* --- timeline --- */
-.timeline-bg {
-	background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Antonio_Salieri_signature.svg/320px-Antonio_Salieri_signature.svg.png") repeat-x bottom;
-}
+/* timeline */
 #bottom_line {
+	top: 0px;
 	background-color: black;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.6);
 }
 .cmp_arrow_right,
 .cmp_arrow_left,
-.cmp_back_to_today { display: none; }
+.cmp_back_to_today {
+	display: none;
+}
 .bottom_start,
 .bottom_end {
-	bottom: -1px !important;
-	color: darkred;
+	top: 0px !important;
+	height: 20px;
+	font-family: 'Beth Ellen';
+	color: black;
 	background: none;
 	border-radius: 0;
-	border-left: 3px double black;
+	border-left: 4px double black;
 }
 #time_show {
-	font-size: 12px;
-	font-weight: bold;
-	background-color: darkred;
-	border-radius: 5px 0;
+	top: 12px;
+	height: 16px;
+	background-color: black;
+	border-radius: 6px 0;
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-	opacity: 0.8;
 }
+#time_show span { color: antiquewhite; }
 
-/* --- dashboard --- */
+/* dashboard */
 #dashboard_holder {
-	max-width: none;
-	padding: 0;
+	height: 100vh;
+	width: 80%;
+	max-width: 80%;
+	min-width: 80%;
+	margin: 0 auto;
+	padding: 20px 0;
 }
-#plurk-dashboard a { color: #003153; }
+#plurk-dashboard a { color: navy; }
 #plurk-dashboard .dash-segment .segment-content {
-	padding: 10px;
-	color: black;
+	margin-top: 0;
+	padding: 8px 16px;
 	background: none;
 	border: 2px solid rgba(0,0,0,0);
 	border-radius: 20px 0;
 	transition: .3s ease-in-out;
 }
-#plurk-dashboard .dash-segment .segment-content:hover {
-	color: antiquewhite;
-	background: black;
-	border: 2px solid antiquewhite;
+
+/* left */
+#plurk-dashboard .dash-group-left {
+width: 32%;
+color: black;
+padding-right: 0;
+}
+#plurk-dashboard .dash-segment-profile {
+	border-radius: 20px 0;
+	background-color: rgba(0,0,0,0.2);
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-	opacity: 0.7;
 }
 #plurk-dashboard .dash-group-form .segment-content:hover,
 #plurk-dashboard .dash-segment-friends .segment-content:hover,
+#plurk-dashboard .dash-segment-fans .segment-content:hover,
 #plurk-dashboard .dash-segment-award .segment-content:hover {
 	background: none;
 	border: 2px solid rgba(0,0,0,0);
 	box-shadow: none;
-	opacity: 1;
 }
-
-/* profile */
-#plurk-dashboard img {
-	border: 2px solid black;
-	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-#dash-profile { margin-left: 1vw; }
+#plurk-dashboard img { box-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
 #plurk-dashboard .dash-segment-profile #dash-profile #full_name { margin-left: 100px; }
-.display_name { font-weight: bold; }
-.nick_name { font: 1.5vw 'Beth Ellen';}
-.profile-info { position: absolute; right: 4%; bottom: 4%; }
-.profile-info span { color: darkred; }
-#dash-additional-info {
-	font-size: 14px;
+.display_name { font-size: 18px; font-weight: bold; }
+.nick_name { font: 14px 'Beth Ellen'; }
+.profile-info { position: absolute; right: 0; bottom: 0; }
+/* .profile-info span { } */
+#dash-additional-info { font-size: 14px; }
+#plurk-dashboard .dash-segment-profile #dash-additional-info #about_me { padding: 0;}
+#plurk-dashboard .dash-segment-profile #dash-additional-info #location_container,
+#plurk-dashboard .dash-segment-profile #dash-additional-info #relationship_container {
+	margin: 0;
+	font: 14px 'Beth Ellen';
+	display: flex;
+	justify-content: flex-end;
 }
-#location {
-	font: 1.2vw 'Beth Ellen';
-	position: absolute;
-	right: 5%;
-	bottom: 2%;
+.friend_man {
+	padding: 4px 12px;
+	font: 13px 'UnifrakturCook' !important;
+	color: antiquewhite !important;
+	background-color: black;
+	border-radius: 10px 0;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+	transition: .3s ease-in-out;
 }
+.friend_man:hover { background-color: darkred; }
+
+/* right */
+#plurk-dashboard .dash-group-form,
+#plurk-dashboard .dash-group-right { width: 64%; }
 
 /* textarea */
+#plurk-dashboard .dash-segment-post .segment-content {
+	margin: 0;
+	padding: 0;
+}
 .input_holder { background: none; border: none; }
 .submit_img {
+	padding: 4px 12px;
+	width: auto !important;
+	height: auto !important;
 	background-color: black !important;
 	border-radius: 10px 0;
 	color: antiquewhite;
-	font-family: 'UnifrakturCook';
+	font: 24px 'UnifrakturCook';
 	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 	transition: .3s ease-in-out;
 }
@@ -355,11 +444,23 @@ a.hashtag:hover { background-color: darkred !important; color: antiquewhite !imp
 .q_freestyle { background-color: black; transition: .3s ease-in-out }
 .q_freestyle:hover { background-color: darkred; }
 
-/* karma and stats */
-.dash-segment-stats .segment-content { }
+/* karma, stats */
+#plurk-dashboard .dash-segment-stats { width: 60%; }
+#plurk-dashboard .dash-segment-stats .segment-content {
+	margin: 8px 16px;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0,0,0,0.7);
+	border-radius: 20px 0;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+#plurk-dashboard #dash-stats .dash-stats-karma { margin: 0 0 0 -1.2vw; width: auto; }
 .karma_hover {
-	left: 52%;
-	font: 3.2vw 'Beth Ellen';
+	margin: 0;
+	color: #fd9d0b;
+	font: 2vw 'Beth Ellen';
+	pointer-events:none;
+        text-shadow: #ffde00 0px 0px 8px;
 }
 #karma {
 	position: relative;
@@ -381,20 +482,35 @@ a.hashtag:hover { background-color: darkred !important; color: antiquewhite !imp
 #karma_arrow { color: darkred; }
 #dash-stats table { display: none; }
 
-/* friends and fans */
-.show_all_friends a, #num_of_friends { }
-#dash-friends-pics, #dash-fans-pics {
-	padding-left: 10px;
-	height: 20px;
-	overflow: hidden;
+/* friends, fans */
+#plurk-dashboard .dash-segment-friends { width: 36%; margin: 0; }
+#plurk-dashboard .dash-segment-fans { width: 0; }
+#plurk-dashboard .dash-segment-friends .segment-content { margin-top: 6px; padding: 0; }
+#plurk-dashboard .dash-segment-friends #dash-friends #friend_managment { margin-top: 0; }
+#plurk-dashboard .dash-segment-fans .segment-content { padding: 0; }
+#plurk-dashboard #dash-friends-pics {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#dash-fans::before {
-	font: 1.4vw 'Beth Ellen';
-	position: absolute;
-	bottom: 15%;
-	left: 10%;
-	content: 'Prima la musica e poi le parole.';
+.show_all_friends, .show_mutual_friends { margin-right: 0; }
+/* #dash-fans {} */
+/* #dash-fans::before {} */
+#dash-friends h2,
+#dash-fans h2,
+.friend_holder { display: none; }
+.show_all_friends,
+.show_mutual_friends { font-size: 14px; }
+#plurk-dashboard #dash-friends-pics { padding: 4px 8px; }
+
+/* award */
+#plurk-dashboard .dash-segment-award {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
+#plurk-dashboard .dash-segment-award .segment-content { margin: 0; }
 
 /* --- footer --- */
 #footer,
